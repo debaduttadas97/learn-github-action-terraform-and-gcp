@@ -11,6 +11,6 @@ provider "google" {
   zone = var.zone
 }
 
-#module "instances" {
-#  source     = "./modules/instances"
-#}
+module "instances" {
+  source     = "./modules/instances"
+}
