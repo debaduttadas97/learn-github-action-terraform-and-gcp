@@ -80,6 +80,7 @@ jobs:
       run: |-
         cat > pipeline.auto.tfvars <<EOF
         region="${{ vars.GCP_REGION }}" 
+        zone="${{ vars.GCP_ZONE }}"
         project="${{ vars.GCP_PROJECT }}" 
         data-project="${{ vars.GCP_DATA_PROJECT }}"
         EOF
