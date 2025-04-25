@@ -10,11 +10,33 @@ resource "google_compute_instance" "vm_instance" {
 
 network_interface {
   network = "default"
+  access_config {
+    }
   }
   
-#network_interface {
-  #  network = google_compute_network.vpc_network.name
-  #  access_config {
-  #  }
-  #}
+#Metadata for startup script to install Apache
+metadata = {
+    startup-script = <<-EOT
+      #!/bin/bash
+      sudo apt-get update
+      sudo apt-get install -y apache2
+      sudo systemctl start apache2
+      sudo systemctl enable apache2
+    EOT
+  }
+
+tags = ["http-server"]
+}
+#--------------------------------------------#
+# Add a firewall rule to allow HTTP traffic
+resource "google_compute_firewall" "default-allow-http" {
+  name    = "default-allow-http"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  target_tags = ["http-server"]
 }
