@@ -1,7 +1,7 @@
 terraform {
     backend "gcs" { 
       bucket  = "learn-github-action-terraform-and-gcp"
-      prefix  = "demo" 
+      prefix  = "demo"
     }
 }
 
