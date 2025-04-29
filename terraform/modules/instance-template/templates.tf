@@ -6,7 +6,7 @@ resource "google_compute_instance_template" "vm_instance_template" {
     auto_delete  = true
     boot         = true
     #source_image = "debian-cloud/debian-11"
-    source_image - projects/optical-figure-453316-a4/global/images/my-image-1
+    source_image = projects/optical-figure-453316-a4/global/images/my-image-1
   }
 
   network_interface {
