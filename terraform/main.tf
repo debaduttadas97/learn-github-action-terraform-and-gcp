@@ -22,3 +22,7 @@ module "firewalls" {
 module "instance-template" {
     source    = "./modules/instance-template"
 }
+
+module "managed-instance-group" {
+    source    = "./modules/managed-instance-group"
+}
