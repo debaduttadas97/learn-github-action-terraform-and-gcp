@@ -13,7 +13,7 @@ resource "google_compute_instance_group_manager" "managed_group" {
 
   version {
     name              = "http-vm"
-    instance_template = instance-template.google_compute_instance_template.vm_instance_template.self_link_unique
+    instance_template = var.instance_template_self_link
   }
 }
 
