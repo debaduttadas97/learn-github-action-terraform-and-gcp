@@ -2,13 +2,18 @@
 resource "google_compute_instance_group_manager" "managed_group" {
   name               = "terraform-managed-instance-group01"
   base_instance_name = "terraform-managed-instance-group01-instance"
-  instance_template  = "projects/learn-terraform-457917/global/instanceTemplates/terraform-instance-template-01"
+  #instance_template  = "projects/learn-terraform-457917/global/instanceTemplates/terraform-instance-template-01"
   target_size        = 2
   zone               = var.mig-zone
 
   auto_healing_policies {
     health_check      = google_compute_health_check.default.self_link
     initial_delay_sec = 300
+  }
+
+  version {
+    name              = "httpserver"
+    instance_template = google_compute_instance_template.vm_instance_template.self_link_unique
   }
 }
 
