@@ -25,4 +25,5 @@ module "instance-template" {
 
 module "managed-instance-group" {
     source    = "./modules/managed-instance-group"
+    instance_template_self_link    = module.instance-template.google_compute_instance_template.vm_instance_template.self_link_unique
 }
