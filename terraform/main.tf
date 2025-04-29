@@ -26,4 +26,4 @@ module "instance-template" {
 #module "managed-instance-group" {
 #    source    = "./modules/managed-instance-group"
 #    instance_template_self_link    = module.instance-template.template_selflink_unique
-}
+#}
