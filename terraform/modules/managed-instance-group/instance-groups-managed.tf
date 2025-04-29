@@ -4,7 +4,7 @@ resource "google_compute_instance_group_manager" "managed_group" {
   base_instance_name = "terraform-managed-instance-group01-instance"
   instance_template  = "projects/learn-terraform-457917/global/instanceTemplates/terraform-instance-template-01"
   target_size        = 2
-  zone               = var.zone
+  zone               = var.mig-zone
 
   auto_healing_policies {
     health_check      = google_compute_health_check.default.self_link
