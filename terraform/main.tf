@@ -14,11 +14,9 @@ provider "google" {
 #module "instances" {
 #  source     = "./modules/instances"
 #}
-
 module "firewalls" {
     source    = "./modules/firewalls"
 }
-
 module "instance-template" {
     source    = "./modules/instance-template"
 }
