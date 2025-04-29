@@ -1,6 +1,6 @@
 resource "google_compute_instance_template" "vm_instance_template" {
   name         = "terraform-instance-template-01"
-  machine_type = "f1-micro"
+  machine_type = "e2-medium"
 
   disk {
     auto_delete  = true
