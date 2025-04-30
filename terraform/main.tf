@@ -27,3 +27,8 @@ provider "google" {
 #    source    = "./modules/managed-instance-group"
 #    instance_template_self_link    = module.instance-template.template_selflink_unique
 #}
+
+#module "http-load-balancer" {
+#    source    = "./modules/http-load-balancer"
+#    health_check_self_link    = module.managed-instance-group.health_check_selflink_unique
+#}
