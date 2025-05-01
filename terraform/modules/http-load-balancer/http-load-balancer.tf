@@ -31,7 +31,7 @@ resource "google_compute_backend_service" "default" {
   health_checks         = [var.health_check_self_link]
 
   backend {
-    group = google_compute_region_instance_group_manager.managed_group.instance_group
+    group = var.instance_group
   }
 }
 
