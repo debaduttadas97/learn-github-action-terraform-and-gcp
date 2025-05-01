@@ -31,5 +31,5 @@ module "managed-instance-group" {
 module "http-load-balancer" {
     source    = "./modules/http-load-balancer"
     health_check_self_link    = module.managed-instance-group.health_check_selflink_unique
-    instance_group    = module.managed_instance_group.instance_group_self_link
+    instance_group    = module.managed-instance-group.instance_group_self_link
 }
