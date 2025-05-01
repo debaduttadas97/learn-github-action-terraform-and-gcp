@@ -3,5 +3,5 @@ output "health_check_selflink_unique" {
 }
 
 output "instance_group_self_link" {
-  value = google_compute_region_instance_group_manager.managed_group.instance_group
+  value = google_compute_instance_group_manager.managed_group.instance_group
 }
